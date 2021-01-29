@@ -1,0 +1,30 @@
+noud@ns1:~/workspaces/github/git-lfs$ curl -F "file=@test.txt" https://api.anonfiles.com/upload
+{"status":true,"data":{"file":{"url":{"full":"https://anonfiles.com/vfw3C3Dep3/test_txt","short":"https://anonfiles.com/vfw3C3Dep3"},"metadata":{"id":"vfw3C3Dep3","name":"test.txt","size":{"bytes":29,"readable":"29 B"}}}}}noud@ns1:~/workspaces/github/git-lfs$ https://api.anonfiles.com/v2/file/vfw3C3Dep3/info
+bash: https://api.anonfiles.com/v2/file/vfw3C3Dep3/info: No such file or directory
+noud@ns1:~/workspaces/github/git-lfs$ https://api.anonfiles.com/v2/file/de19488e-1611892197/info
+bash: https://api.anonfiles.com/v2/file/de19488e-1611892197/info: No such file or directory
+noud@ns1:~/workspaces/github/git-lfs$ curl -F "file=@test.txt" https://api.anonfiles.com/v2/file/vfw3C3Dep3/info
+<html>
+<head><title>404 Not Found</title></head>
+<body bgcolor="white">
+<center><h1>404 Not Found</h1></center>
+<hr><center>nginx</center>
+</body>
+</html>
+noud@ns1:~/workspaces/github/git-lfs$ curl -F "file=@test.txt" https://api.anonfiles.com/v2/file/de19488e-1611892197/info
+<html>
+<head><title>302 Found</title></head>
+<body bgcolor="white">
+<center><h1>302 Found</h1></center>
+<hr><center>nginx</center>
+</body>
+</html>
+noud@ns1:~/workspaces/github/git-lfs$ curl -F "file=@test.txt" https://api.anonfiles.com/v2/file/test_txt/info
+<html>
+<head><title>302 Found</title></head>
+<body bgcolor="white">
+<center><h1>302 Found</h1></center>
+<hr><center>nginx</center>
+</body>
+</html>
+noud@ns1:~/workspaces/github/git-lfs$ 
